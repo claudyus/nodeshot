@@ -1,9 +1,14 @@
+{% load compressed %}
 <!DOCTYPE html>{% load i18n %}
 <html>
 <head>
     <meta charset="utf-8" />
     <title>{{ settings.HTML_TITLE_INDEX }}</title>
-    {% if DEBUG %}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/base-uncompressed.css" />{% else %}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/base.css" />{% endif %}
+    {% compressed_css 'nodeshot' %}
+    {% compressed_js 'nodeshot' %}
+
+
+    <!--{% if DEBUG %}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/base-uncompressed.css" />{% else %}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}css/base.css" />{% endif %} -->
     <!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <base href="{% url nodeshot.views.index %}" />
     <meta name="robots" content="{{ settings.META_ROBOTS }}" />

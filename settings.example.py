@@ -123,9 +123,12 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.staticfiles',
     'nodeshot',
+    'pipeline',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 # additional information about administrators
 AUTH_PROFILE_MODULE = 'nodeshot.UserProfile'
@@ -222,3 +225,25 @@ TOPOLOGY_URL_TIMEOUT=30
 ETX_THRESHOLD=23.0
 OLSR_URLS=["http://127.0.0.1:2006/all"]
 BATMAN_URLS=[]
+
+PIPELINE_CSS = {
+    'colors': {
+        'source_filenames': (
+          'media/css/admin-customizations.css',
+          'media/css/css/base-encoded.css',
+          'media/css/css/uncompressed.css',
+        ),
+        'output_filename': 'media/css/nodeshot.css',
+    },
+}
+
+PIPELINE_JS = {
+    'nodeshot': {
+        'source_filenames': (
+          'media/js/jquery.js',
+          'media/js/jquery.*.js',
+          'media/js/nodeshot.js',
+        ),
+        'output_filename': 'js/app.js',
+    }
+}

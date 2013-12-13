@@ -8,3 +8,6 @@ south
 Celery
 django-celery
 django-celery-email
+
+django-pipeline==1.2.24
+#due to django==1.4.1

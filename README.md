@@ -44,10 +44,18 @@ If you want to do a quick install to play with nodeshot just follow this routine
     pip install -r requirements.txt
     cp settings.example.py settings.py
     export DJANGO_SETTINGS_MODULE=settings
+    #collect static require yuglify see Note
     ./manage.py syncdb && ./manage.py collectstatic && ./manage.py runserver
 
 Enjoy on http://localhost:8000/ !
 Admin site is at http://localhost:8000/admin/
+
+Note:
+------
+yuglify is a node component that can be installed using
+    npm -g install yuglify
+npm is the package manager of nodejs.
+nodejs can be installed from ubuntu ppa ppa:chris-lea/node.js 
 
 PRODUCTION INSTALLATION
 ---------------
