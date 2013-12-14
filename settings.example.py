@@ -136,6 +136,39 @@ AUTH_PROFILE_MODULE = 'nodeshot.UserProfile'
 # If you use the django development server set this to true if you want django to serve static files (check urls.py)
 DEVELOPMENT_SERVER = True
 
+# django-pipeline stuff
+PIPELINE_CSS = {
+    'css': {
+        'source_filenames': (
+          'css/*.css',
+           #'css/*.less', enable to use LESScss
+        ),
+        'output_filename': 'css/nodeshot.min.css',
+        #'variant': 'datauri',
+    },
+}
+
+PIPELINE_JS = {
+    'nodeshot-js': {
+        'source_filenames': (
+          'js/*.js',
+        ),
+        'output_filename': 'js/nodeshot.min.js',
+    },
+}
+
+STATICFILES_DIRS = (
+  os.path.join(os.path.dirname(__file__), 'media'),
+)
+
+PIPELINE_COMPILERS = (
+  'pipeline.compilers.less.LessCompiler',
+)
+
+#NOTE: switch to PipelineCachedStorage in production if nginx is configured 
+# to never re-send css/js files
+STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
+
 # google map center for nodeshot
 NODESHOT_GMAP_CONFIG = {
     'lat': '41.8934',
@@ -225,25 +258,3 @@ TOPOLOGY_URL_TIMEOUT=30
 ETX_THRESHOLD=23.0
 OLSR_URLS=["http://127.0.0.1:2006/all"]
 BATMAN_URLS=[]
-
-PIPELINE_CSS = {
-    'colors': {
-        'source_filenames': (
-          'media/css/admin-customizations.css',
-          'media/css/css/base-encoded.css',
-          'media/css/css/uncompressed.css',
-        ),
-        'output_filename': 'media/css/nodeshot.css',
-    },
-}
-
-PIPELINE_JS = {
-    'nodeshot': {
-        'source_filenames': (
-          'media/js/jquery.js',
-          'media/js/jquery.*.js',
-          'media/js/nodeshot.js',
-        ),
-        'output_filename': 'js/app.js',
-    }
-}
