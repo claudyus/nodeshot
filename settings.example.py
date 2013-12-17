@@ -144,9 +144,11 @@ PIPELINE_CSS = {
            #'css/*.less', enable to use LESScss
         ),
         'output_filename': 'css/nodeshot.min.css',
-        #'variant': 'datauri',
+        'variant': 'datauri',
     },
 }
+
+PIPELINE_EMBED_PATH = r'[/]?images/'
 
 PIPELINE_JS = {
     'nodeshot-js': {
