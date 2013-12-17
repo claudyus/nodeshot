@@ -13,3 +13,6 @@ bin/*
 lib/*
 local
 include/*
+
+#ignore bower download
+media/components/*

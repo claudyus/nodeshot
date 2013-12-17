@@ -15,8 +15,8 @@
     </script>
     <![endif]-->
     <!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    {% compressed_js 'nodeshot-js' %}
     <script src="//maps.googleapis.com/maps/api/js?libraries=geometry&v=3&sensor=false" type="text/javascript"></script>
+    {% compressed_js 'nodeshot-js' %}
     <base href="{% url nodeshot.views.index %}" />
     <meta name="robots" content="{{ settings.META_ROBOTS }}" />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -114,7 +114,7 @@
             nodeshot.layout.$mask.removeClass('initial')
             if(!nodeshot.layout.$dialog){nodeshot.layout.$mask.hide();}
             nodeshot.layout.$loading.hide();
-            nodeshot.layout.$body.append('<script src="{{ MEDIA_URL }}js\/compressed\/jquery.jstree.js"><\/script>');
+            //nodeshot.layout.$body.append('<script src="{{ MEDIA_URL }}js\/compressed\/jquery.jstree.js"><\/script>');
         // update dimensions on resize
         }).resize(function(){
             nodeshot.layout.setFullScreen();

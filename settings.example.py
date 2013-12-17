@@ -151,7 +151,9 @@ PIPELINE_CSS = {
 PIPELINE_JS = {
     'nodeshot-js': {
         'source_filenames': (
-          'js/*.js',
+            'components/jquery/jquery.js',
+            'components/jquery.cookie/jquery.cookie.js',
+            'js/*.js',
         ),
         'output_filename': 'js/nodeshot.min.js',
     },
