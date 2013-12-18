@@ -58,6 +58,7 @@ var nodeshot = {
         nodeshot.layout.initPotential();
         nodeshot.layout.initLinkQuality();
         nodeshot.easterEgg();
+        nodeshot.initNodeTree();    //load the jstree list
     }, // nodeshot.init()
     
     /*
@@ -608,7 +609,6 @@ var nodeshot = {
         /*
         * nodeshot.layout.initNodeTree()
         * initializes jstree plugin
-        * this method is called at the end of media/js/compressed/jquery.jstree.js
         */
         initNodeTree: function(){
             this.$nodeTree.jstree({
