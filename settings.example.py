@@ -156,8 +156,10 @@ PIPELINE_JS = {
         'source_filenames': (
             'bower_components/jquery/jquery.js',
             'bower_components/jquery.cookie/jquery.cookie.js',
-            'bower_components/angular/angular.js'
-            'js/*.js',
+            'bower_components/angular/angular.js',
+            'js/jquery-ui.js',
+            'js/jquery.*.js',
+            'js/nodeshot.js',
         ),
         'output_filename': 'js/nodeshot.min.js',
     },
@@ -174,6 +176,8 @@ PIPELINE_COMPILERS = (
 #NOTE: switch to PipelineCachedStorage in production if nginx is configured 
 # to never re-send css/js files
 STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
+
+PIPELINE_DISABLE_WRAPPER = True
 
 #django-bower config
 BOWER_COMPONENTS_ROOT = 'media/'
