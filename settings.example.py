@@ -122,6 +122,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'django.contrib.staticfiles',
+    'djangobower',
     'nodeshot',
     'pipeline',
     # Uncomment the next line to enable admin documentation:
@@ -153,8 +154,9 @@ PIPELINE_EMBED_PATH = r'[/]?images/'
 PIPELINE_JS = {
     'nodeshot-js': {
         'source_filenames': (
-            'components/jquery/jquery.js',
-            'components/jquery.cookie/jquery.cookie.js',
+            'bower_components/jquery/jquery.js',
+            'bower_components/jquery.cookie/jquery.cookie.js',
+            'bower_components/angular/angular.js'
             'js/*.js',
         ),
         'output_filename': 'js/nodeshot.min.js',
@@ -172,6 +174,15 @@ PIPELINE_COMPILERS = (
 #NOTE: switch to PipelineCachedStorage in production if nginx is configured 
 # to never re-send css/js files
 STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
+
+#django-bower config
+BOWER_COMPONENTS_ROOT = 'media/'
+
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'jquery.cookie',
+    'angular',
+)
 
 # google map center for nodeshot
 NODESHOT_GMAP_CONFIG = {

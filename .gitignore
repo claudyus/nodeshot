@@ -15,4 +15,4 @@ local
 include/*
 
 #ignore bower download
-media/components/*
+media/bower_components/*
