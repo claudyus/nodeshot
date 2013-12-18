@@ -1,3 +1,7 @@
+/*!
+ * nodeshot.js
+ *
+ */
 // Array Remove - By John Resig (MIT Licensed)
 Array.prototype.remove = function(from, to) {
   var rest = this.slice((to || from) + 1 || this.length);
@@ -57,8 +61,8 @@ var nodeshot = {
         nodeshot.layout.initChoices()
         nodeshot.layout.initPotential();
         nodeshot.layout.initLinkQuality();
+        nodeshot.layout.initNodeTree();    //load the jstree list
         nodeshot.easterEgg();
-        nodeshot.initNodeTree();    //load the jstree list
     }, // nodeshot.init()
     
     /*
