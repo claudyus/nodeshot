@@ -1998,7 +1998,6 @@ var nodeshot = {
             nodeshot.layout.$infoWrapper = $('#info-wrapper');
             nodeshot.layout.$tableWrapper = $('#table-wrapper');
             nodeshot.layout.$signalbar = $(".signalbar");
-            nodeshot.layout.$body.append('<script src="'+nodeshot.url.media+'js/compressed/overview.js"></script>')
         }, // nodeshot.infoTab.init()
         
         /*
