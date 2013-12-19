@@ -45,6 +45,7 @@ If you want to do a quick install to play with nodeshot just follow this routine
     cp settings.example.py settings.py
     export DJANGO_SETTINGS_MODULE=settings
     #collect static require yuglify see Note
+    ./manage.py bower_install #only the first time
     ./manage.py syncdb && ./manage.py collectstatic && ./manage.py runserver
 
 Enjoy on http://localhost:8000/ !
